@@ -7,11 +7,8 @@ Forked from: https://gist.githubusercontent.com/TheDistantSea/8021359
  * @param {string} v1 The first version to be compared.
  * @param {string} v2 The second version to be compared.
  * @param {object} [options] Optional flags that affect comparison behavior:
- * lexicographical: true</tt> compares each part of the version strings lexicographically instead of
- *         naturally; this allows suffixes such as "b" or "dev" but will cause "1.10" to be considered smaller than
- *         "1.2".
- * zeroExtend: true</tt> changes the result if one version string has less parts than the other. In
- *         this case the shorter string will be padded with "zero" parts instead of being considered smaller.
+ * lexicographical: true</tt> compares each part of the version strings lexicographically instead of naturally; this allows suffixes such as "b" or "dev" but will cause "1.10" to be considered smaller than "1.2".
+ * zeroExtend: true</tt> changes the result if one version string has less parts than the other. In this case the shorter string will be padded with "zero" parts instead of being considered smaller.
  *
  * @returns {number|NaN}
  * - 0 if the versions are equal
