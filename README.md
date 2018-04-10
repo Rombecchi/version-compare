@@ -10,14 +10,15 @@ Forked from: https://gist.githubusercontent.com/TheDistantSea/8021359
 
 > @param {object} **[options]** Optional flags that affect comparison behavior:
 
-- **lexicographical**: true compares each part of the version strings lexicographically instead of naturally; this allows suffixes such as "b" or "dev" but will cause "1.10" to be considered smaller than "1.2".
-- **zeroExtend**: true changes the result if one version string has less parts than the other. In this case the shorter string will be padded with "zero" parts instead of being considered smaller.
+- **lexicographical**: (true/[false]) compares each part of the version strings lexicographically instead of naturally; this allows suffixes such as "b" or "dev" but will cause "1.10" to be considered smaller than "1.2".
+- **zeroExtend**: ([true]/false) changes the result if one version string has less parts than the other. In this case the shorter string will be padded with "zero" parts instead of being considered smaller.
 
 > @returns {number|NaN}
 - **0** if the versions are equal
-- a **negative** integer iff v1 < v2
-- a **positive** integer iff v1 > v2
+- a **negative** integer if v1 < v2
+- a **positive** integer if v1 > v2
 - **NaN** if either version string is in the wrong format
+ 
  
  ## UPDATE 1.1 (10-04-2018)
 - [x] added defaults to lexicographical (false) and zeroExtend (true)
