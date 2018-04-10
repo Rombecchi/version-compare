@@ -25,7 +25,7 @@ function versionCompare(v1, v2, options) {
       v2parts = (v2 || "0").split('.');
 
   function isValidPart(x) {
-    return (lexicographical ? /^\d+[A-Za-zαß]*$/ : /^\d+$/).test(x);
+    return (lexicographical ? /^\d+[A-Za-zαß]*$/ : /^\d+[A-Za-zαß]$/).test(x);
   }
 
   if (!v1parts.every(isValidPart) || !v2parts.every(isValidPart)) {
@@ -38,8 +38,14 @@ function versionCompare(v1, v2, options) {
   }
 
   if (!lexicographical) {
-    v1parts = v1parts.map(Number);
-    v2parts = v2parts.map(Number);
+    v1parts = v1parts.map(function(x){
+     var match = (/[A-Za-zαß]/).exec(x);  
+     return Number(match ? x.replace(match[0], "." + x.charCodeAt(match.index)):x);
+    });
+    v2parts = v2parts.map(function(x){
+     var match = (/[A-Za-zαß]/).exec(x);  
+     return Number(match ? x.replace(match[0], "." + x.charCodeAt(match.index)):x);
+    });
   }
 
   for (var i = 0; i < v1parts.length; ++i) {
