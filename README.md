@@ -24,4 +24,4 @@ Forked from: https://gist.githubusercontent.com/TheDistantSea/8021359
 - [x] added defaults to lexicographical (false) and zeroExtend (true)
 - [x] added alpha/beta versioning as valid parts
 - [x] empty v1 or v2 param is assumed as version "0"
-- [ ] avoid that lexicographical causing that "1.10" will considered smaller than "1.2"
+- [x] version not compared with lex options can accept a single char (ex: "1.10a" > "1.10")
