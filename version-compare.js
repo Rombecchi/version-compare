@@ -25,7 +25,7 @@ function versionCompare(v1, v2, options) {
       v2parts = (v2 || "0").split('.');
 
   function isValidPart(x) {
-    return (lexicographical ? /^\d+[A-Za-zαß]*$/ : /^\d+[A-Za-zαß]$/).test(x);
+    return (lexicographical ? /^\d+[A-Za-zαß]*$/ : /^\d+[A-Za-zαß]?$/).test(x);
   }
 
   if (!v1parts.every(isValidPart) || !v2parts.every(isValidPart)) {
